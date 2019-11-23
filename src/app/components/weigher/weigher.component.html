@@ -1,0 +1,30 @@
+<form (submit)="submitfunc(age.value, height.value, weight.value)"  class="login-form"> 
+        <h1>Калькулятор нормы веса</h1> 
+
+        <div class="txtb">
+            <p>Возраст:</p>
+            <input type="number" name="quantity" min="1" placeholder="лет" required #age>
+        </div>
+        <div class="txtb">
+            <p>Рост:</p>
+            <input type="number" name="quantity" min="1" placeholder="см" required #height>
+        </div>
+        <div class="txtb">
+                <p>Вес:</p>
+                <input type="number" name="quantity" min="1" placeholder="кг" required #weight>
+        </div>
+        <input type="submit" class="logbtn" value="Вычислить"> 
+
+                 
+</form>
+
+
+<button class="calc-history-btn" (click)="toggleHistory()">История Вычислений</button>
+<div class="calc-history" *ngIf=showHistory>
+    <ul>
+        <li *ngFor="let hist of history">{{hist}}</li>
+    </ul>
+</div>
+
+<!-- <p [ngClass]="{class1: showHistory, class2: !showHistory}">asaxas</p> -->
+
